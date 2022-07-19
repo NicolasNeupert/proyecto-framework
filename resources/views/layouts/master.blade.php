@@ -17,11 +17,9 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                    <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/nuevo-producto" class="nav-link px-2 text-secondary">Nuevo Producto</a></li>
+                    <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuario</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -29,8 +27,7 @@
                 </form>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-warning">Sign-up</button>
+                    <a href="/login" class="btn btn-outline-light me-2">Login</a>
                 </div>
             </div>
         </div>
@@ -42,11 +39,9 @@
     @section('footer')
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/nuevo-producto" class="nav-link px-2 text-secondary">Nuevo Producto</a></li>
+                    <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuario</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Company, Inc</p>
     </footer>

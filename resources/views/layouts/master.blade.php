@@ -19,7 +19,9 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
                     <li><a href="/nuevo-producto" class="nav-link px-2 text-secondary">Nuevo Producto</a></li>
-                    <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuario</a></li>
+                    <li><a href="/actualizacion" class="nav-link px-2 text-secondary">Actualizar Producto</a></li>
+                    <li><a href="/borrar" class="nav-link px-2 text-secondary">Eliminar Producto</a></li>
+                    <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuarios</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -41,6 +43,8 @@
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
         <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
                     <li><a href="/nuevo-producto" class="nav-link px-2 text-secondary">Nuevo Producto</a></li>
+                    <li><a href="/actualizacion" class="nav-link px-2 text-secondary">Actualizar Producto</a></li>
+                    <li><a href="/borrar" class="nav-link px-2 text-secondary">Eliminar Producto</a></li>
                     <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuario</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Company, Inc</p>

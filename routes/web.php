@@ -29,14 +29,6 @@ Route::get('/nuevo-producto', function () {
     return view('nuevo-producto');
 });
 
-Route::get('/nuevo-producto/eliminar', function () {
-    return view('formulario-producto');
-});
-
-Route::get('/nuevo-producto/editar', function () {
-    return view('formulario-producto');
-});
-
 Route::get('/asignar-producto', function () {
     return view('asignar-producto');
 });

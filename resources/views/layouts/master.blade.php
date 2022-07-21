@@ -25,6 +25,8 @@
                     <li><a href="/create-user" class="nav-link px-2 text-secondary"> Nuevo Usuario </a></li>
                     <li><a href="/asignar-producto" class="nav-link px-2 text-secondary"> Asignar Productos </a></li>
                     <li><a href="/consultar-producto" class="nav-link px-2 text-secondary"> Consultar Productos </a></li>
+                    <li><a href="/actualizar-producto" class="nav-link px-2 text-secondary"> Actualizar Productos </a></li>
+                    <li><a href="/borrar-producto" class="nav-link px-2 text-secondary"> Borrar Productos </a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -52,6 +54,8 @@
                     <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuario</a></li>
                     <li><a href="/asignar-producto" class="nav-link px-2 text-secondary">Asignar Productos</a></li>
                     <li><a href="/consultar-producto" class="nav-link px-2 text-secondary">Consultar Productos</a></li>
+                    <li><a href="/actualizar-producto" class="nav-link px-2 text-secondary"> Actualizar Productos </a></li>
+                    <li><a href="/borrar-producto" class="nav-link px-2 text-secondary"> Borrar Productos </a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Proyecto de framework</p>
     </footer>

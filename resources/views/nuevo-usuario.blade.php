@@ -10,6 +10,22 @@
 
 <div class="container">
     <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                      Formulario para ingresar nuevos productos a una sucursal
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+    <br>
     <div class="col-sm-8 offset-sm-2">
         <form action="" method="">
             <div class="mb-3">

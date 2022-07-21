@@ -44,3 +44,10 @@ Route::get('/asignar-producto', function () {
 Route::get('/consultar-producto', function () {
     return view('consultar-producto');
 });
+Route::get('/borrar-producto', function () {
+    return view('borrar-producto');
+});
+Route::get('/actualizar-producto', function () {
+    return view('actualizar-producto');
+});
+

@@ -8,6 +8,22 @@
 @stop
 @section('content')
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        Formulario para agregar nuevos productos a una sucursal
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+    <br>
     <div class="container">
         <br>
         <div class="col-sm-8 offset-sm-2">
@@ -42,11 +58,11 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Seleccionar sucursal
                     </a>
-                    
+
                     <ul class="dropdown-menu" aria-labelledby="dropSucursal">
-                        <li><a class="dropdown-item" >Viña del Mar</a></li>
-                        <li><a class="dropdown-item" >Valparaiso</a></li>
-                        <li><a class="dropdown-item" >Santiago</a></li>
+                        <li><a class="dropdown-item">Viña del Mar</a></li>
+                        <li><a class="dropdown-item">Valparaiso</a></li>
+                        <li><a class="dropdown-item">Santiago</a></li>
                     </ul>
                 </div>
                 <br>

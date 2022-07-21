@@ -36,3 +36,10 @@ Route::get('/nuevo-producto/eliminar', function () {
 Route::get('/nuevo-producto/editar', function () {
     return view('formulario-producto');
 });
+Route::get('/borrar', function () {
+    return view('borrar-producto');
+});
+Route::get('/actualizacion', function () {
+    return view('actualizacion-productos');
+});
+

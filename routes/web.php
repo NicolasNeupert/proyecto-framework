@@ -36,3 +36,11 @@ Route::get('/nuevo-producto/eliminar', function () {
 Route::get('/nuevo-producto/editar', function () {
     return view('formulario-producto');
 });
+
+Route::get('/asignar-producto', function () {
+    return view('asignar-producto');
+});
+
+Route::get('/consultar-producto', function () {
+    return view('consultar-producto');
+});

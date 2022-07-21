@@ -9,6 +9,7 @@
 @section('content')
 
 <div class="container">
+    <br>
     <div class="col-sm-8 offset-sm-2">
         <form action="" method="">
             <div class="mb-3">
@@ -39,7 +40,7 @@
                 <label for="more_password" class="form-label">Repetir Contraseña</label>
                 <input type="password" class="form-control" id="more_password">
             </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Crear Usuario</button>
         </form>
     </div>
 </div>

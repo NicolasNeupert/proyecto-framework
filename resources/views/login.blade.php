@@ -8,6 +8,7 @@
 @stop
 @section('content')
 <div class="container">
+    <br>
     <div class="col-sm-8 offset-sm-2">
         <form>
             <div class="mb-3">

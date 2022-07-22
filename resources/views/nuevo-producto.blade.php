@@ -7,7 +7,7 @@
     @parent
 @stop
 @section('content')
-
+<br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">

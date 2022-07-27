@@ -20,21 +20,9 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-<<<<<<< HEAD
                     <li><a href="/" class="nav-link px-2 text-secondary"> Inicio </a></li>
-                    <li><a href="/nuevo-producto" class="nav-link px-2 text-secondary"> Nuevo Producto </a></li>
-                    <li><a href="/create-user" class="nav-link px-2 text-secondary"> Nuevo Usuario </a></li>
-                    <li><a href="/asignar-producto" class="nav-link px-2 text-secondary"> Asignar Productos </a></li>
-                    <li><a href="/consultar-producto" class="nav-link px-2 text-secondary"> Consultar Productos </a></li>
-                    <li><a href="/actualizar-producto" class="nav-link px-2 text-secondary"> Actualizar Productos </a></li>
-                    <li><a href="/borrar-producto" class="nav-link px-2 text-secondary"> Borrar Productos </a></li>
-=======
-                    <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="/nuevo-producto" class="nav-link px-2 text-secondary">Nuevo Producto</a></li>
-                    <li><a href="/actualizacion" class="nav-link px-2 text-secondary">Actualizar Producto</a></li>
-                    <li><a href="/borrar" class="nav-link px-2 text-secondary">Eliminar Producto</a></li>
-                    <li><a href="/create-user" class="nav-link px-2 text-secondary">Nuevo Usuarios</a></li>
->>>>>>> a50f1327eb3d38df5ef6534149bca745fc320b33
+                    <li><a href="/productos" class="nav-link px-2 text-secondary"> Gestor de Productos </a></li>
+                    <li><a href="/crear-usuario" class="nav-link px-2 text-secondary"> Nuevo Usuario </a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -51,8 +39,21 @@
     @show
 
    
-    @section('content')
-    @show
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1">
+                <img src="/img/lateralizquierdo.png"  class="bg-image p-5"  style="width: 38vh; heigth: 110vh" alt="">
+            </div>
+            <div class="col-md-10">
+                @section('content')
+                @show
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+    
 
     @section('footer')
     <footer class="py-3 my-4">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +22,12 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/create-user', function () {
+Route::get('/crear-usuario', function () {
     return view('nuevo-usuario');
+});
+
+Route::get('/productos', function () {
+    return view('productos');
 });
 
 Route::get('/nuevo-producto', function () {

@@ -15,7 +15,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
-                        Formulario para asignar productos a una sucursal
+                        Asignar productos a una sucursal
                     </div>
                 </div>
             </div>

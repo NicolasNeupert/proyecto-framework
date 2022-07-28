@@ -35,46 +35,6 @@
 
 
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-1">
-                <img src="/img/lateralizquierdo.png" class="bg-image p-5" style="width: 45vh; heigth: 150vh"
-                    alt="">
-            </div>
-            <div class="col-md-10">
-                @section('content')
-                @show
-
-
-            </div>
-            <div class="col-md-1">
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-10">
-                @section('footer')
-                    <footer class="py-3 my-4">
-                        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                            <li><a href="/" class="nav-link px-2 text-secondary"> Inicio </a></li>
-                            <li><a href="/productos" class="nav-link px-2 text-secondary"> Gestor de Productos </a></li>
-                            <li><a href="/crear-usuario" class="nav-link px-2 text-secondary"> Nuevo Usuario </a></li>
-                        </ul>
-                        <p class="text-center text-muted">© 2022 Proyecto de framework</p>
-                    </footer>
-                @show
-            </div>
-            <div class="col-md-1">
-            </div>
-        </div>
-    </div>
-
-
-
     @section('content')
     @show
 

@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vista - @yield('title')</title>
+    <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="/css/custom.css" rel="stylesheet">
 
 
 
@@ -15,27 +16,16 @@
 <body>
 
     @section('header')
-        <header class="p-3 text-bg-dark">
+        <header class="header-main p-3">
             <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                            <use xlink:href="#bootstrap"></use>
-                        </svg>
-                    </a>
-
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="/" class="nav-link px-2 text-secondary"> Inicio </a></li>
-                        <li><a href="/productos" class="nav-link px-2 text-secondary"> Gestor de Productos </a></li>
-                        <li><a href="/crear-usuario" class="nav-link px-2 text-secondary"> Nuevo Usuario </a></li>
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
+                    <ul class="navmain nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="/" class="nav-link">Inicio </a></li>
+                        <li><a href="/productos" class="nav-link">Gestor de Productos </a></li>
+                        <li><a href="/user/create" class="nav-link">Nuevo Usuario </a></li>
                     </ul>
-
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-
-                    </form>
-
                     <div class="text-end">
-                        <a href="/login" class="btn btn-outline-light me-2">Login</a>
+                        <a href="/user/login" class="btn btn-outline-light me-2">Login</a>
                     </div>
                 </div>
             </div>
@@ -85,6 +75,21 @@
 
 
 
+    @section('content')
+    @show
+
+
+    @section('footer')
+        <footer class="footer-main py-3">
+            <ul class="widget-menu nav justify-content-center pb-3 mb-3">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/" class="nav-link">Inicio</a></li>
+                <li><a href="/products" class="nav-link">Gestor de Productos</a></li>
+                <li><a href="/user/create" class="nav-link">Nuevo Usuario</a></li>
+            </ul>
+            <p class="copyright">© 2022 Proyecto de framework</p>
+        </footer>
+    @show
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>

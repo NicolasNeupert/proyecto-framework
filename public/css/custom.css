@@ -26,8 +26,8 @@ header.header-main ul.navmain > li > a{
     position: relative;
 }
 .here-scene .banner-main{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
 }
 .here-scene .banner-main h1{
     text-transform: uppercase;

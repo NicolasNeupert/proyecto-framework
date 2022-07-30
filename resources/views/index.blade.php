@@ -47,7 +47,7 @@
                                 <div class="d-flex actions-buttons">
                                     <div class="btn-group">
                                         <a href="" class="btn btn-success">Ver más</a>
-                                        <a href="" class="btn btn-danger">Editar</a>
+                                        <!-- <a href="" class="btn btn-danger">Editar</a> -->
                                     </div>
                                 </div>
                             </div>

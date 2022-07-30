@@ -24,8 +24,6 @@ class CreateProductosTable extends Migration
             $table->bigInteger('cantidad');
             $table->bigInteger('precio');
             $table->timestamps();
-
-            
         });
     }
 

@@ -21,7 +21,10 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
                     <ul class="navmain nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li><a href="/" class="nav-link">Inicio </a></li>
-                        <li><a href="/productos" class="nav-link">Gestor de Productos </a></li>
+                        <li><a href="{{ route('producto.listadoProductoss') }}" class="nav-link">Gestor de Productos </a></li>
+                        <li><a class="nav-link" href="/productos">Productos</a></li>
+                        <li><a class="nav-link" href="/categorias/index">Categorias</a></li>
+                        <li><a class="nav-link" href="/sucursales/index'">Sucursales</a></li>
                         <li><a href="/user/create" class="nav-link">Nuevo Usuario </a></li>
                     </ul>
                     <div class="text-end">
@@ -42,7 +45,6 @@
     @section('footer')
         <footer class="footer-main py-3">
             <ul class="widget-menu nav justify-content-center pb-3 mb-3">
-                <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/" class="nav-link">Inicio</a></li>
                 <li><a href="/products" class="nav-link">Gestor de Productos</a></li>
                 <li><a href="/user/create" class="nav-link">Nuevo Usuario</a></li>

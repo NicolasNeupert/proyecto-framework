@@ -15,7 +15,7 @@ class CreateSucursalesTable extends Migration
     {
         Schema::create('sucursales', function (Blueprint $table) {
             $table->engine="InnoDB";
-            $table->id();
+            $table->increments('id');
             $table->string('comuna');
             $table->string('direccion');
             $table->string('telefonoSucursal');

@@ -13,18 +13,31 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-            $table->id();
-            $table->String('nombre');
-            $table->String('codigo');
-            $table->String('categoria');
-            $table->String('sucursal');
-            $table->longText('descripcion');
-            $table->String('imagen');
-            $table->bigInteger('cantidad');
-            $table->bigInteger('precio');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('productos')) {
+            Schema::create('productos', function (Blueprint $table) {
+                $table->engine="InnoDB";
+                $table->id();
+                $table->String('nombre');
+                $table->String('codigo');
+
+                // CLAVES FORANEAS
+                //$table->foreign('categoria_id')->constrained('categorias')->cascadeOnUpdate()->nullOnDelete();
+                //$table->foreign('sucursal_id')->constrained('sucursales')->cascadeOnUpdate()->nullOnDelete();
+                
+                $table->foreing('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+                $table->foreing('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
+
+                $table->longText('descripcion');
+                $table->String('imagen');
+                $table->bigInteger('cantidad');
+                $table->bigInteger('precio');
+                $table->timestamps();
+
+                
+                
+            
+            });
+        }
     }
 
     /**

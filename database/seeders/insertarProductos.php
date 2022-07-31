@@ -27,6 +27,6 @@ class insertarProductos extends Seeder
                 'updated_at' => now()
             ));
         }
-        $this->command->info("Se cargaron los datos de ejemplo");
+        $this->command->info("Se cargaron los datos de ejemplo productos");
     }
 }

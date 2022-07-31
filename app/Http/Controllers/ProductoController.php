@@ -13,7 +13,20 @@ class ProductoController extends Controller{
         return view('index', ['productos'=>$data]);
     }
 
-    public function create(){
+    public function create(Request $request){
+
+        $this->validate($request,[
+            'nombre' => 'String|required|max:255',
+            'codigo' => 'required',
+            'categoria' => 'required',
+            'sucursal' => 'required',
+            'descripcion' => 'String',
+            'imagen' => 'required',
+            'cantidad' => 'Integer',
+            'precio' => 'Integer'
+
+        ]);
+
         return view('nuevo-producto');
     }
 

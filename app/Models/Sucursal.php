@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
+class Sucursal extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-    protected $table = 'categorias';
+    protected $table = 'sucursales';
 
 
     public function productos()
     {
         return $this->hasMany(Producto::class);
     }
-
 }

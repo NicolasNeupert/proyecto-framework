@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\UserController;
+//use App\Http\Controllers\UserController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\Categoriacontroller;
@@ -19,45 +20,44 @@ use App\Http\Controllers\Categoriacontroller;
 |
 */
 
+Route::get('/','App\Http\Controllers\InicioController@index');
 
-Route::get('/', [InicioController::class, 'index'])->name('home');
+Route::resource('productos', 'App\Http\Controllers\ProductoController');
 
+// MOSTRAR TODOS LOS PRODUCTOS POR SU ID
+Route::get('/producto/mostrar','App\Http\Controllers\ProductoController@index');
 
+//  ELIMINAR PRODUCTO
+Route::get('/producto/eliminar','App\Http\Controllers\ProductoController@destroy');
 
+// MOSTRAR PRODUCTO POR ID 
+Route::get('/producto/detalle','App\Http\Controllers\ProductoController@show');
 
-Route::resource('productos', ProductoController::class)->names([
-    'create' => 'producto.nuevo-producto',
-    'store' => 'producto.detalle-producto',
-    'show' => 'producto.mostrar-productos',
-    'edit' => 'producto.editar-producto',
-    'destroy' => 'producto.eliminar-producto',
-]);
+// ACTUALIZAR PRODUCTO
+Route::post('/producto/actualizar/{id}','App\Http\Controllers\ProductoController@update');
 
+// CREAR PRODUCTO
+Route::get('/producto/crear','App\Http\Controllers\ProductoController@create');
 
+// EDITAR PRODUCTO
+Route::get('/producto/editar','App\Http\Controllers\ProductoController@edit');
 
+// DETALLE PRODUCTO
+Route::get('/producto/detalle','App\Http\Controllers\ProductoController@show');
 
-
-/*
-Route::resource('productos', [ProductoController::class, 'create'])->name('create');
-Route::resource('productos', [ProductoController::class, 'destroy'])->name('destroy');
-
-*/
-
-
-Route::resource('users', UserController::class);
-/*
-Route::resource('sucursales', SucursalController::class);
-Route::resource('categorias', CategoriaController::class);
-*/
+// DETALLE PRODUCTO
+Route::get('/producto/consultar','App\Http\Controllers\ProductoController@consultar');
 
 
 
+
+
+//Route::resource('users', UserController::class);
 
 
 /* RUTAS USERS CONTROLLERS */
-Route::get('/user/login', [UserController::class, 'login']);
-Route::get('/user/create', [UserController::class, 'create']);
+//Route::get('/user/login', [UserController::class, 'login']);
+//Route::get('/user/create', [UserController::class, 'create']);
 /* FIN RUTAS USERS*/
 
-Auth::routes();
-
+//Auth::routes();

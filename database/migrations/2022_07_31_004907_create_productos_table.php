@@ -27,6 +27,7 @@ class CreateProductosTable extends Migration
                 $table->String('imagen');
                 $table->bigInteger('cantidad');
                 $table->bigInteger('precio');
+                $table->String('estado');
                 $table->timestamps();
 
                 

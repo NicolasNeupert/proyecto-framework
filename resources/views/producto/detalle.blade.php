@@ -1,12 +1,12 @@
 @extends('layouts.master')
-@section('title', 'Home')
+@section('title', 'Detalle Producto')
 
 @section('header')
     @parent
 @stop
 
 @section('content')
-<h1>Mostrar detaller del productos</h1>
+<h1>Mostrar detalles del productos</h1>
 @stop
 
 @section('footer')

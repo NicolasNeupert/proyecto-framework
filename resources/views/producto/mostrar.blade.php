@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Home')
+@section('title', 'Mostrar Productos')
 
 
 
@@ -31,8 +31,8 @@
             <div class="col-md-4 align-items-center">
                 <div class="d-flex actions-buttons">
                     <div class="btn-group">
-                        <a href="/producto/nuevo-producto" class="btn btn-success">Ingresar Producto a Inventario</a>
-                        <a href="/producto/consultar-producto" class="btn btn-info">Buscar Producto a Inventario</a>
+                        <a href="/producto/crear" class="btn btn-success">Ingresar Producto a Inventario</a>
+                        <a href="/producto/consultar" class="btn btn-info">Buscar Producto a Inventario</a>
                     </div>
                 </div>
                 <br>
@@ -68,9 +68,9 @@
                                 </div>
                                 <div class="d-flex actions-buttons">
                                     <div class="btn-group">
-                                        <a href="/producto/detaller-producto" class="btn btn-success">Ver más</a>
-                                        <a href="/producto/editar-producto" class="btn btn-success">Editar</a>
-                                        <a href="/producto/eliminar-producto" class="btn btn-danger">eliminar</a>
+                                        <a href="/producto/detalle" class="btn btn-success">Ver más</a>
+                                        <a href="/producto/editar" class="btn btn-success">Editar</a>
+                                        <a href="/producto/eliminar" class="btn btn-danger">eliminar</a>
                                     </div>
                                 </div>
                             </div>

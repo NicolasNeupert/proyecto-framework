@@ -17,7 +17,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            Formulario para ingresar nuevos productos a una sucursal
+                            Formulario para ingresar nuevos usuarios al sistema de invetario
                         </div>
                     </div>
                 </div>

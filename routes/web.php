@@ -52,12 +52,16 @@ Route::get('/producto/consultar','App\Http\Controllers\ProductoController@consul
 
 
 
-//Route::resource('users', UserController::class);
+Route::resource('users','App\Http\Controllers\UserController');
 
 
 /* RUTAS USERS CONTROLLERS */
-//Route::get('/user/login', [UserController::class, 'login']);
-//Route::get('/user/create', [UserController::class, 'create']);
+Route::get('/user/login', 'App\Http\Controllers\UserController@login');
+Route::get('/user/create', 'App\Http\Controllers\UserController@create');
 /* FIN RUTAS USERS*/
 
 //Auth::routes();
+
+Auth::routes();
+
+

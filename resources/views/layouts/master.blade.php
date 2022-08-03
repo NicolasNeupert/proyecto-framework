@@ -23,6 +23,8 @@
                         <li><a href="/" class="nav-link"> Inicio </a></li>
                         <li><a href="/producto/mostrar" class="nav-link"> Productos </a></li>
                         <li><a href="/user/create" class="nav-link"> Nuevo Usuario </a></li>
+                        <li><a href="/sucursal/mostrar" class="nav-link"> Sucursales </a></li>
+                        <li><a href="/categoria/mostrar" class="nav-link"> Categorías </a></li>
                     </ul>
                     <div class="text-end">
                         <a href="/user/login" class="btn btn-outline-light me-2">Login</a>
@@ -45,6 +47,8 @@
                 <li><a href="/" class="nav-link">Inicio</a></li>
                 <li><a href="/producto/mostrar" class="nav-link">Productos</a></li>
                 <li><a href="/user/create" class="nav-link">Nuevo Usuario</a></li>
+                <li><a href="/sucursal/mostrar" class="nav-link"> Sucursales </a></li>
+                <li><a href="/categoria/mostrar" class="nav-link"> Categorías </a></li>
             </ul>
             <p class="copyright">© 2022 Proyecto de framework</p>
         </footer>

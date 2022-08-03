@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Eliminar Producto')
+@section('title', 'Eliminar Categoria')
 
 
 
@@ -20,8 +20,7 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    Formulario para eliminar/borrar productos de una sucursal
-                                </div>
+                                    Formulario para eliminar categorías                                </div>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -34,10 +33,10 @@
                         <form action="" method="">
 
                             <div class="mb-3">
-                                <label for="nameProduct" class="form-label">Ingresar ID producto</label>
+                                <label for="nameProduct" class="form-label">Ingresar ID de Categoría</label>
                                 <input type="text" class="form-control" id="nameProduct">
                             </div>
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <button type="submit" class="btn btn-danger">Eliminar categoría</button>
                         </form>
                     </div>
                 </div>

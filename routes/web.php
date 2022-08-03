@@ -22,6 +22,7 @@ use App\Http\Controllers\Categoriacontroller;
 
 Route::get('/','App\Http\Controllers\InicioController@index');
 
+///////---------------PRODUCTOS--------------------------//////////////
 Route::resource('productos', 'App\Http\Controllers\ProductoController');
 
 // MOSTRAR TODOS LOS PRODUCTOS POR SU ID
@@ -47,6 +48,31 @@ Route::get('/producto/detalle','App\Http\Controllers\ProductoController@show');
 
 // DETALLE PRODUCTO
 Route::get('/producto/consultar','App\Http\Controllers\ProductoController@consultar');
+
+
+///////---------------SUCURSALES--------------------------//////////////
+Route::resource('sucursales', 'App\Http\Controllers\SucursalController');
+// MOSTRAR SUCURSALES
+Route::get('/sucursal/mostrar','App\Http\Controllers\SucursalController@index');
+//  ELIMINAR SUCURSAL
+Route::get('/sucursal/eliminar','App\Http\Controllers\SucursalController@destroy');
+// EDITAR SUCURSAL
+Route::get('/sucursal/editar','App\Http\Controllers\SucursalController@edit');
+// CREAR SUCURSAL
+Route::get('/sucursal/crear','App\Http\Controllers\SucursalController@create');
+
+
+///////---------------CATEGORIAS--------------------------//////////////
+Route::resource('categorias', 'App\Http\Controllers\CategoriaController');
+
+// MOSTRAR CATEGORIA
+Route::get('/categoria/mostrar','App\Http\Controllers\CategoriaController@index');
+//  ELIMINAR CATEGORIA
+Route::get('/categoria/eliminar','App\Http\Controllers\CategoriaController@destroy');
+// EDITAR CATEGORIA
+Route::get('/categoria/editar','App\Http\Controllers\CategoriaController@edit');
+// CREAR CATEGORIA
+Route::get('/categoria/crear','App\Http\Controllers\CategoriaController@create');
 
 
 

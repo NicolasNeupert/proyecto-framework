@@ -145,3 +145,214 @@ header.header-main ul.navmain > li > a{
     font-weight: 300;
     font-family: 'Open Sans', sans-serif;
 }
+.landing-screen{
+    position: relative;
+    background-color: rgba(134, 128, 232, 0.3);
+    padding: 50px 0;
+}
+.ingresarProductoNuevo{
+    max-width: 600px;
+    margin:0 auto;
+    background-color: #FFF;
+    border-radius: 15px;
+    padding: 30px;
+}
+.listSucursales{
+    background-color: #FFF;
+    margin-bottom: 50px;
+}
+.listSucursales .table{
+    margin-bottom: 0;
+    background-color: rgba(134, 128, 232,0.5);
+}
+.title_section{
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.title_section h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    color:#333;
+    font-size: 2em;
+    font-weight: 700;
+}
+.ingresarProductoNuevo label{
+    text-decoration: none;
+    color:#99AEFF;
+    font-size: 1em;
+    font-weight: 500;
+}
+.ingresarProductoNuevo .form-control{
+    background-color: rgba(134, 128, 232,0.7);
+    border:0;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFF;
+}
+.ingresarProductoNuevo .form-control::placeholder{
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFF;
+}
+.ingresarProductoNuevo .form-select{
+    background-color: rgba(134, 128, 232,0.7);
+    border:0;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFF;
+}
+.ingresarProductoNuevo .input-group-text{
+    background-color: rgba(134, 128, 232, 1);
+    border:0;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFF;
+}
+.actions-buttons .btn-group .btn-success{
+    border-color: #8680E8;
+    background-color: #8680E8;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFF;
+}
+.land-producto{
+    padding: 50px 0;
+    position: relative;
+    background-color: #FFF;
+}
+.land-producto .stack-image{
+    border-radius: 15px;
+    background-color: #FFF;
+    text-align: center;
+}
+.land-producto .stack-image img{
+    display: inline-block;
+}
+.land-producto .top-product{
+    position: relative;
+}
+.land-producto .top-product .category{
+    padding: 0.3rem 1rem;
+    background-color: #99AEFF;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.land-producto .top-product .name{
+    text-transform: uppercase;
+    color:  #B38CFF;
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.land-producto .top-product .description p{
+    color:  #262626;
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.land-producto .top-product .quantity{
+    margin-bottom: 0;
+}
+.land-producto .top-product .quantity > label{
+    color:  #596BB3;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.land-producto .top-product .quantity > p{
+    color:  #99AEFF;
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.land-producto .top-product .price{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom:1px solid rgba(153, 174, 255, 0.4);
+}
+.land-producto .top-product .price > p {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    color: #99AEFF;
+    margin-bottom: 0;
+}
+.land-producto .top-product .sucursal{
+    margin-bottom: 0;
+}
+.land-producto .top-product .sucursal > p{
+    color:  #99AEFF;
+    font-size: 1em;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.land-producto .top-product .sucursal > label{
+    color:  #596BB3;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.land-producto .top-product .available{
+    margin-bottom: 10px;
+}
+.land-producto .top-product .available > label{
+    color:  #596BB3;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.land-producto .top-product .available > p{
+    color:  #99AEFF;
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.land-producto .top-product .available > p.green{
+    color: #8AB362;
+}
+.land-producto .top-product .available > p.reed{
+    color: red;
+}
+.land-producto .top-product .actions-button{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top:1px solid rgba(153, 174, 255, 0.4);
+}
+.land-producto .top-product .actions-button .btn{
+    width: 100%;
+}
+.land-producto .top-product .actions-button .btn-primary{
+    border:1px solid #8680E8;
+    background-color: #FFF;
+    color: #8680E8;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.land-producto .top-product .actions-button .btn-danger{
+    border:1px solid #FFF;
+    background-color: #8680E8;
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+}

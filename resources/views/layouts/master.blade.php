@@ -20,11 +20,10 @@
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
                     <ul class="navmain nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="/" class="nav-link"> Inicio </a></li>
-                        <li><a href="/producto/mostrar" class="nav-link"> Productos </a></li>
-                        <li><a href="/user/create" class="nav-link"> Nuevo Usuario </a></li>
-                        <li><a href="/sucursal/mostrar" class="nav-link"> Sucursales </a></li>
-                        <li><a href="/categoria/mostrar" class="nav-link"> Categorías </a></li>
+                        <li><a href="/" class="nav-link">Inicio</a></li>
+                        <li><a href="/productos" class="nav-link">Productos</a></li>
+                        <li><a href="/sucursales" class="nav-link">Sucursales</a></li>
+                        <li><a href="/categorias" class="nav-link">Categorías</a></li>
                     </ul>
                     <div class="text-end">
                         <a href="/user/login" class="btn btn-outline-light me-2">Login</a>
@@ -45,10 +44,9 @@
         <footer class="footer-main py-3">
             <ul class="widget-menu nav justify-content-center pb-3 mb-3">                
                 <li><a href="/" class="nav-link">Inicio</a></li>
-                <li><a href="/producto/mostrar" class="nav-link">Productos</a></li>
-                <li><a href="/user/create" class="nav-link">Nuevo Usuario</a></li>
-                <li><a href="/sucursal/mostrar" class="nav-link"> Sucursales </a></li>
-                <li><a href="/categoria/mostrar" class="nav-link"> Categorías </a></li>
+                <li><a href="/productos" class="nav-link">Productos</a></li>
+                <li><a href="/sucursales" class="nav-link">Sucursales</a></li>
+                <li><a href="/categorias" class="nav-link">Categorías</a></li>
             </ul>
             <p class="copyright">© 2022 Proyecto de framework</p>
         </footer>

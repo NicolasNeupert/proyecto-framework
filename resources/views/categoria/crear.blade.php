@@ -7,61 +7,34 @@
     @parent
 @stop
 @section('content')
-    <br>
-    <div class="container-fluid">
+<section class="landing-screen">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        Formulario para crear categorías:
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <div class="container">
-                    <br>
-                    <div class="col-sm-8 offset-sm-2">
-                        <form action="" method="">
-
-
-                            <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Nombre o Tipo</label>
-                                <input type="text" class="form-control" id="categoryProduct">
+            <div class="col-12">
+                <div class="ingresarProductoNuevo">
+                    <form action="{{ url('/categorias')}}" method="POST">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre o Tipo</label>
+                            <input type="text" class="form-control" name="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción </label>
+                            <textarea class="form-control" name="descripcion"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-end">
+                                <button type="submit" name="save" class="btn btn-primary">Guardar</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="descriptionProduct" class="form-label">Descripción </label>
-                                <textarea class="form-control" id="descriptionProduct"></textarea>
+                            <div class="col-6 text-start">
+                                <button type="submit" name="clear" class="btn btn-danger">Limpiar</button>
                             </div>
-                            <br>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    </div>
-                                
-                                    <div class="col-md-3">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</section>
 @stop
 
 @section('footer')

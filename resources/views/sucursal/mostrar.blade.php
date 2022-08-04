@@ -7,91 +7,54 @@
     @parent
 @stop
 @section('content')
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        Nuestras sucursales:
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4 align-items-center">
-                <div class="d-flex actions-buttons">
-                    
-                    <div class="btn-group">
-                        <a href="/sucursal/crear" class="btn btn-success">Crear nueva sucursal</a>
-                    </div>
-                </div>
-                <br>
-            </div>
-            <div class="col-md-4">
-            </div>
-        </div>
-
-    </div>
-    
-   
-        </div>
-    </div>
-    <div class="col-md-2">
-    </div>
-    </div>
-    </div> 
     <div class="list-product">
         <div class="container">
             <div class="row">
-                @foreach($sucursales as $sucursal)
-                <div class="col-sm-4">
-                    <div class="card item shadow-sm">
-                        <div class="card-body">
-                            <div class="image">
-                                <span class="flag category">{{$sucursal['id']}}</span>
-                            </div>
-                            <div class="info-bottom">
-                                <h3 class="name"><a href="">{{$sucursal['comuna']}}</a></h3>
-                                <p class="card-text Contacto">
-                                    {{$sucursal['telefonoSucursal']}}
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price">
-                                        <p>${{$sucursal['direccion']}}</p>
-                                    </div>
-                                    <div class="quantity">
-                                    <p>${{$sucursal['emailSucursal']}}</p>
-                                        <p>{{$sucursal['horarioSucursal']}} </p>
-                                    </div>
-                                </div>
-                                <div class="d-flex actions-buttons">
-                                    <div class="btn-group">
-                                    <a href="/sucursal/editar" class="btn btn-success">Editar sucursal</a>
-                                    <a href="/sucursal/eliminar" class="btn btn-danger">Eliminar sucursal</a>
-
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-sm-12">
+                    <div class="title_section">
+                        <h2>Nuestas sucursales</h2>
+                    </div>
+                    <div class="listSucursales">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Dirección</th>
+                                        <th scope="col">Comuna</th>
+                                        <th scope="col">Ciudad</th>
+                                        <th scope="col">Teléfono</th>
+                                        <th scope="col">Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($sucursales as $sucursal)
+                                    <tr>
+                                        <th scope="row">{{$sucursal['id']}}</th>
+                                        <td>{{$sucursal['direccion']}}</td>
+                                        <td>{{$sucursal['comuna']}}</td>
+                                        <td>{{$sucursal['ciudad']}}</td>
+                                        <td>{{$sucursal['telefono']}}</td>
+                                        <td>{{$sucursal['email']}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                @endforeach
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="d-flex actions-buttons align-items-center justify-content-center">
+                        <div class="btn-group">
+                            <a href="/sucursales/create" class="btn btn-success">Crear nueva sucursal</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-2">
-    </div>
-    </div>
-    </div>  
- 
 @stop
 
 @section('footer')

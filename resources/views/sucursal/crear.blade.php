@@ -7,73 +7,46 @@
     @parent
 @stop
 @section('content')
-    <br>
-    <div class="container-fluid">
+<section class="landing-screen">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        Formulario para crear nueva sucursal
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <div class="container">
-                    <br>
-                    <div class="col-sm-8 offset-sm-2">
-                        <form action="" method="">
-
-
+            <div class="col-12">
+                <div class="ingresarProductoNuevo">
+                <form action="{{ url('/sucursales') }}" method="POST">
                             <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Comuna</label>
-                                <input type="text" class="form-control" id="categoryProduct">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" name="direccion">
                             </div>
                             <div class="mb-3">
-                                <label for="descriptionProduct" class="form-label">Dirección </label>
-                                <textarea class="form-control" id="descriptionProduct"></textarea>
+                                <label for="comuna" class="form-label">Comuna</label>
+                                <input type="text" class="form-control" name="comuna">
                             </div>
                             <div class="mb-3">
-                                <label for="quantityProduct" class="form-label">Teléfono</label>
-                                <input type="number" class="form-control" id="quantityProduct">
+                                <label for="ciudad" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" name="ciudad">
                             </div>
                             <div class="mb-3">
-                                <label for="quantityProduct" class="form-label">Horario de atención</label>
-                                <input type="number" class="form-control" id="quantityProduct">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="phone" class="form-control" name="telefono">
                             </div>
                             <div class="mb-3">
-                                <label for="quantityProduct" class="form-label">Email de contacto</label>
-                                <input type="number" class="form-control" id="quantityProduct">
+                                <label for="email" class="form-label">Email de contacto</label>
+                                <input type="email" class="form-control" name="email">
                             </div>
-                            <br>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    </div>
-                                
-                                    <div class="col-md-3">
-                                    </div>
+                            <div class="row">
+                                <div class="col-6 text-end">
+                                    <button type="submit" name="save" class="btn btn-primary">Guardar</button>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <button type="submit" name="clear" class="btn btn-danger">Limpiar</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 @stop
 
 @section('footer')

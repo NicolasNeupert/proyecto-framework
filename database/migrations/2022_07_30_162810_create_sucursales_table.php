@@ -14,13 +14,12 @@ class CreateSucursalesTable extends Migration
     public function up()
     {
         Schema::create('sucursales', function (Blueprint $table) {
-            $table->engine="InnoDB";
             $table->increments('id');
+            $table->string('ciudad');
             $table->string('comuna');
             $table->string('direccion');
-            $table->string('telefonoSucursal');
-            $table->string('emailSucursal');
-            $table->string('horarioSucursal');
+            $table->string('telefono');
+            $table->string('email');
             $table->timestamps();
         });
     }

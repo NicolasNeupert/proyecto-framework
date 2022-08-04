@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
 class insertarCategorias extends Seeder
 {
     /**
@@ -13,14 +13,26 @@ class insertarCategorias extends Seeder
      */
     public function run()
     {
-        for($i=1; $i <= 9; $i++){
-            \DB::table('categorias')->insert(array(
-                'nombre' => 'Categoria '.$i,
-                'descripcion' => 'Categoria nº '.$i,
+        DB::table('categorias')->insert(array(
+            [
+                'nombre' => 'Tecnologia',
+                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis arcu lectus. Nulla facilisi.',
                 'created_at' => now(),
                 'updated_at' => now()
-            ));
-        }
+            ],
+            [
+                'nombre' => 'Gaming',
+                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis arcu lectus. Nulla facilisi.',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'nombre' => 'Consolas',
+                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis arcu lectus. Nulla facilisi.',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ));
         $this->command->info("Se cargaron los datos de ejemplo productos");
     }
 }

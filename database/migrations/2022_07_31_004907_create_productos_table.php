@@ -15,24 +15,17 @@ class CreateProductosTable extends Migration
     {
         if (!Schema::hasTable('productos')) {
             Schema::create('productos', function (Blueprint $table) {
-                $table->engine="InnoDB";
-                $table->increments('id');
+                $table->id();
                 $table->String('nombre');
                 $table->String('codigo');
-
                 $table->integer('categoria_id')->unsigned();
                 $table->integer('sucursal_id')->unsigned();
-
                 $table->longText('descripcion');
                 $table->String('imagen');
                 $table->bigInteger('cantidad');
                 $table->bigInteger('precio');
-                $table->String('estado');
+                $table->integer('estado');
                 $table->timestamps();
-
-                
-                
-            
             });
         }
 

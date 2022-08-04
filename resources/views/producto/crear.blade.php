@@ -7,114 +7,79 @@
     @parent
 @stop
 @section('content')
-    <br>
-    <div class="container-fluid">
+<section class="landing-screen">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        Formulario para agregar nuevos productos a una sucursal
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <div class="container">
-                    <br>
-                    <div class="col-sm-8 offset-sm-2">
-                        <form action="" method="">
-                            <div class="mb-3">
-                                <label for="nameProduct" class="form-label">Nombre del producto</label>
-                                <input type="text" class="form-control" id="nameProduct">
+            <div class="col-12">
+                <div class="ingresarProductoNuevo">
+                    <form action="{{ url('/productos')}}" method="POST">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Desktop Gamer Red Leeroy AMD Ryzen 3">
+                        </div>
+                        <div class="mb-3">
+                            <label for="codigo" class="form-label">Codigó del producto</label>
+                            <input type="text" class="form-control" name="codigo" placeholder="XXXXXXXXXXX">
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label" >Categoría</label>
+                            <select class="form-select form-select-md" name="categoria">
+                                <option value="null">Elije una categoría</option>
+                                @foreach($categorias as $categoria)
+                                <option value="{{$categoria['id']}}">{{$categoria['nombre']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sucursal" class="form-label">Sucursal</label>
+                            <select class="form-select form-select-md" name="sucursal">
+                                <option value="null">Elije una comuna</option>
+                                @foreach($sucursales as $sucursal)
+                                <option value="{{$sucursal['id']}}">{{$sucursal['comuna']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select form-select-md" name="estado">
+                                <option value="null">Seleccione una opción</option>
+                                <option value="1">Disponible</option>
+                                <option value="0">No Disponible</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cantidad" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" name="cantidad" placeholder="99">
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio de venta</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" name="precio" placeholder="599000">
                             </div>
-                            <div class="mb-3">
-                                <label for="codProduct" class="form-label">Codigó del producto</label>
-                                <input type="text" class="form-control" id="codProduct">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" name="descripcion"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagen" class="form-label">Cargar imagen referencial</label>
+                            <input type="text" class="form-control" name="imagen" placeholder="Ingrese una url">
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-end">
+                                <button type="submit" name="save" class="btn btn-primary">Guardar</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Categoría</label>
-                                <select class="form-select form-select-md">
-                                    <option selected>Categorías</option>
-                                    <option value="1">Tarjetas de video</option>
-                                    <option value="2">Procesadores</option>
-                                    <option value="3">Placas Madre</option>
-                                    <option value="4">Memorias Ram</option>
-                                    <option value="5">Discos Duros</option>
-                                    <option value="6">SSD</option>
-                                    <option value="7">Tarjetas de Sonido</option>
-                                    <option value="8">Tarjetas de Red</option>
-                                    <option value="9">Gabinetes</option>
-                                    <option value="10">Cooler CPU</option>
-                                    <option value="12">Ventiladores</option>
-
-                                </select>
+                            <div class="col-6 text-start">
+                                <button type="submit" name="clear" class="btn btn-danger">Limpiar</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Sucursal</label>
-                                <select class="form-select form-select-md">
-                                    <option selected>Sucursal disponible</option>
-                                    <option value="1">Santiago</option>
-                                    <option value="2">viña del mar</option>
-                                    <option value="3">Valparaíso</option>
-
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Disponibilidad</label>
-                                <select class="form-select form-select-md">
-                                    <option selected>Estado</option>
-                                    <option value="1">Disponible</option>
-                                    <option value="2">No Disponible</option>
-                                    < </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="quantityProduct" class="form-label">Cantidad</label>
-                                <input type="number" class="form-control" id="quantityProduct">
-                            </div>
-                            <div class="mb-3">
-                                <label for="quantityProduct" class="form-label">Precio de venta</label>
-                                <input type="number" class="form-control" id="quantityProduct">
-                            </div>
-                            <div class="mb-3">
-                                <label for="descriptionProduct" class="form-label">Descripción</label>
-                                <textarea class="form-control" id="descriptionProduct"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Cargar imagen referencial</label>
-                                <input class="form-control" type="file" id="formFile">
-                            </div>
-
-                            <br>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-outline-primary">Guardar</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-outline-danger">Limpiar</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</section>
 @stop
 
 @section('footer')

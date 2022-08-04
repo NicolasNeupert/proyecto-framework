@@ -7,70 +7,86 @@
     @parent
 @stop
 @section('content')
-    <br>
-    <div class="container-fluid">
+<section class="landing-screen">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        Formulario para actualizar información de un producto
-                    </div>
+            <div class="col-12">
+                <div class="ingresarProductoNuevo">
+                    <form action="{{ url('/productos')}}" method="POST">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Desktop Gamer Red Leeroy AMD Ryzen 3" value="{{$producto[0]->nombre}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="codigo" class="form-label">Codigó del producto</label>
+                            <input type="text" class="form-control" name="codigo" placeholder="XXXXXXXXXXX" value="{{$producto[0]->codigo}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label" >Categoría</label>
+                            <select class="form-select form-select-md" name="categoria">
+                                @foreach($categorias as $categoria)
+                                    @if($categoria['id'] == $producto[0]->categorias->id)
+                                        <option value="{{$categoria['id']}}" selected>{{$categoria['nombre']}}</option>
+                                    @else
+                                    <option value="{{$categoria['id']}}">{{$categoria['nombre']}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sucursal" class="form-label">Sucursal</label>
+                            <select class="form-select form-select-md" name="sucursal">
+                                @foreach($sucursales as $sucursal)
+                                    @if($sucursal['id'] == $producto[0]->sucursales->id)
+                                        <option value="{{$sucursal['id']}}" selected>{{$sucursal['comuna']}}</option>
+                                    @else
+                                    <option value="{{$sucursal['id']}}">{{$sucursal['comuna']}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select form-select-md" name="estado">
+                                @if(($producto[0]->estado) == 1)
+                                    <option value="1" selected>Disponible</option>
+                                    <option value="0">No disponible</option>
+                                @else if(($producto[0]->estado) == 0)
+                                    <option value="1">Disponible</option>
+                                    <option value="0" selected>No disponible</option>
+                                @endif
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cantidad" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" name="cantidad" placeholder="99" value="{{$producto[0]->cantidad}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio de venta</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" name="precio" placeholder="599000" value="{{$producto[0]->precio}}">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" name="descripcion">{{$producto[0]->descripcion}}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagen" class="form-label">Cargar imagen referencial</label>
+                            <input type="text" class="form-control" name="imagen" placeholder="Ingrese una url" value="{{$producto[0]->imagen}}">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button type="submit" name="save" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="col-md-4">
             </div>
         </div>
     </div>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <div class="container">
-                    <br>
-                    <div class="col-sm-8 offset-sm-2">
-                        <form action="" method="">
-
-                            <div class="mb-3">
-                                <label for="nameProduct" class="form-label">Ingresar ID producto</label>
-                                <input type="text" class="form-control" id="nameProduct">
-                            </div>
-                            <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Nombre del producto</label>
-                                <input type="text" class="form-control" id="categoryProduct">
-                            </div>
-                            <div class="mb-3">
-                                <label for="descriptionProduct" class="form-label">Descripción</label>
-                                <textarea class="form-control" id="descriptionProduct"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="quantityProduct" class="form-label">Precio</label>
-                                <input type="number" class="form-control" id="quantityProduct">
-                            </div>
-                            <br>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-outline-primary">Guardar</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-outline-danger">Limpiar</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</section>
 @stop
 
 @section('footer')

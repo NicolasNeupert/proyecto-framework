@@ -12,8 +12,8 @@ class Sucursal extends Model
     protected $table = 'sucursales';
 
 
-    public function sucursales()
+    public function productos()
     {
-        return $this->hasMany(Sucursal::class);
+        return $this->hasMany(Producto::class);
     }
 }

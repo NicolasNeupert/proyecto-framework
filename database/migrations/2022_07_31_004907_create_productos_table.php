@@ -19,7 +19,6 @@ class CreateProductosTable extends Migration
                 $table->String('nombre');
                 $table->String('codigo');
                 $table->integer('categoria_id')->unsigned();
-                $table->integer('sucursal_id')->unsigned();
                 $table->longText('descripcion');
                 $table->String('imagen');
                 $table->bigInteger('cantidad');
@@ -32,7 +31,6 @@ class CreateProductosTable extends Migration
         Schema::table('productos', function(Blueprint $table) 
         {
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
-            $table->foreign('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
         });
     }
 

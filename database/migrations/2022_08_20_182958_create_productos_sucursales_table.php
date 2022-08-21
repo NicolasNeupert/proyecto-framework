@@ -15,22 +15,20 @@ class CreateProductosSucursalesTable extends Migration
     {
         if (!Schema::hasTable('productos_sucursales')) {
             Schema::create('productos_sucursales', function (Blueprint $table) {
-                $table->id();
-                $table->integer('productos_id')->unsigned();
-                $table->integer('sucursales_id')->unsigned();
+                $table->increments('id');
+                $table->bigInteger('cantidad');
+                $table->integer('producto_id')->unsigned();
+                $table->integer('sucursal_id')->unsigned();
                 $table->timestamps();
             });
-            
-            Schema::table('productos_sucursales', function(Blueprint $table) 
-            {
-                $table->foreign('productos_id')->references('id')->on('productos')->onDelete('cascade');
-                $table->foreign('sucursales_id')->references('id')->on('sucursales')->onDelete('cascade');
-            });
-
         }
+        Schema::table('productos_sucursales', function(Blueprint $table) 
+        {
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->foreign('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
+        });
         
     }
-
     /**
      * Reverse the migrations.
      *

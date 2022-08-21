@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="ingresarProductoNuevo">
-                    <form action="{{ url('/productos')}}" method="POST">
+                    <form action="{{ url('/productos')}}" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre del producto</label>
                             <input type="text" class="form-control" name="nombre" placeholder="Desktop Gamer Red Leeroy AMD Ryzen 3">
@@ -48,10 +48,6 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="cantidad" class="form-label">Cantidad</label>
-                            <input type="number" class="form-control" name="cantidad" placeholder="99">
-                        </div>
-                        <div class="mb-3">
                             <label for="precio" class="form-label">Precio de venta</label>
                             <div class="input-group">
                                 <span class="input-group-text">$</span>
@@ -64,7 +60,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="imagen" class="form-label">Cargar imagen referencial</label>
-                            <input type="text" class="form-control" name="imagen" placeholder="Ingrese una url">
+                            <input type="file" class="form-control" name="imagen" accept=".jpg, .png, .gif">
                         </div>
                         <div class="row">
                             <div class="col-6 text-end">

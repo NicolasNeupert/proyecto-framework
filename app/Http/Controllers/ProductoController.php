@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\Sucursal;
@@ -33,30 +34,35 @@ class ProductoController extends Controller
             'categoria' => 'required',
             'sucursal' => 'required',
             'estado' => 'required',
-            'cantidad' => 'required',
             'precio' => 'required',
             'descripcion' => 'required',
             'imagen' => 'required'
         ]);
+
+        $imagen = $request->file('imagen');
+
+        if($imagen){
+            $imagen_path = time()."-".$imagen->getClientOriginalName();
+            \Storage::disk('images')->put($imagen_path, \File::get($imagen));
+        }
 
         $producto = new Producto();
 
         $producto->nombre = $request->nombre;
         $producto->codigo = $request->codigo;
         $producto->categoria_id = $request->categoria;
-        $producto->sucursal_id = $request->sucursal;
         $producto->estado = $request->estado;
-        $producto->cantidad = $request->cantidad;
         $producto->precio = $request->precio;
         $producto->descripcion = $request->descripcion;
-        $producto->imagen = $request->imagen;
+        $producto->imagen = $imagen_path;
 
         $producto->save();
 
         $producto = Producto::get();
-
-        return view('producto.mostrar', [
-            'productos' => $producto
+        $sucursal = Sucursal::get();
+        return view('productos_sucursales.crear', [
+            'productos' => $producto,
+            'sucursales' => $sucursal,
         ]);
     }
 
@@ -77,7 +83,7 @@ class ProductoController extends Controller
 
     public function show($id){
         
-        $producto = Producto::where('id', $id)->get()->load('categorias')->load('sucursales');
+        $producto = Producto::where('id', $id)->get()->load('categorias');
 
         //dd($producto);
         return view('producto.detalle', [
@@ -85,7 +91,8 @@ class ProductoController extends Controller
         ]);
     }
 
-    public function consultar(){
-        return view('producto.consultar');
+    public function getImagen($filename){
+        $file = \Storage::disk('images')->get($filename);
+        return new Response($file, 200);
     }
 }

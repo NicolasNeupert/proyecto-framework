@@ -15,7 +15,11 @@
                     <div class="card item shadow-sm">
                         <div class="card-body">
                             <div class="image">
+                                @if(Storage::disk('images')->has($producto['imagen']))
+                                <a href="/productos/{{$producto['id']}}"><img src="{{ url('miniatura/'.$producto['imagen']) }}" class="img-fluid"></a>
+                                @else
                                 <a href="/productos/{{$producto['id']}}"><img src="{{$producto['imagen']}}" class="img-fluid"></a>
+                                @endif
                                 <span class="flag category">{{$producto->categorias->nombre}}</span>
                             </div>
                             <div class="info-bottom">

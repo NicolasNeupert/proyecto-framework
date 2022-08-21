@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\Categoriacontroller;
+use App\Http\Controllers\Productos_SucursalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,9 @@ Route::resource('/sucursales', 'App\Http\Controllers\SucursalController');
 /*CATEGORIAS*/
 Route::resource('/categorias', 'App\Http\Controllers\CategoriaController');
 
+/*PRODUCTOS SUCURSALES*/
+Route::resource('/productosconsucursales', 'App\Http\Controllers\ProductosconsucursalesController');
+
 /*USUARIOS*/
 Route::resource('/users','App\Http\Controllers\UserController');
 Route::get('/user/login', 'App\Http\Controllers\UserController@login');
@@ -42,4 +46,5 @@ Route::get('/user/create', 'App\Http\Controllers\UserController@create');
 
 Auth::routes();
 
-
+//recuperar imagen
+Route::get('miniatura/{filename}', 'App\Http\Controllers\ProductoController@getImagen');

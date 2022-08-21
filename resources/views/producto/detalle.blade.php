@@ -11,7 +11,11 @@
             <div class="row">
                 <div class="col-sm-7">
                     <div class="stack-image">
+                        @if(Storage::disk('images')->has($producto[0]->imagen))
+                        <img src="{{ url('miniatura/'.$producto[0]->imagen) }}" class="img-fluid">
+                        @else
                         <img src="{{$producto[0]->imagen}}" class="img-fluid">
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-5">
@@ -36,10 +40,7 @@
                             <p class="red">Producto no disponible</p>
                             @endif
                         </div>
-                        <div class="sucursal">
-                            <label for="sucursal">Sucursal:</label>
-                            <p>{{$producto[0]->sucursales->direccion}}, {{$producto[0]->sucursales->comuna}}, {{$producto[0]->sucursales->ciudad}}</p>
-                        </div>
+
                         <div class="actions-button">
                             <div class="row">
                                 <div class="col-6 text-end">

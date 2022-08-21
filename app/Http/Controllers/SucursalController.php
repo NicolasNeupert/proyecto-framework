@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sucursal;
-
+use App\Models\Producto_Sucursal;
 class SucursalController extends Controller
 {
     public function index()
@@ -50,6 +50,17 @@ class SucursalController extends Controller
 
         return view('sucursal.mostrar', [
             'sucursales' => $sucursal
+        ]);
+    }
+    public function show($id){
+        
+        $productoconsucursalList = Producto_Sucursal::all();
+        $sucursal = Sucursal::where('id', $id)->get();
+
+        //dd($producto);
+        return view('sucursal.detalle', [
+            'sucursal' => $sucursal,
+            'productos_sucursales' => $productoconsucursalList
         ]);
     }
 }

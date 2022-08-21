@@ -13,7 +13,7 @@ class Producto_Sucursal extends Model
 
 
     public function productos(){
-        return $this->belongsTo('App\Models\Productos', 'productos_id');
+        return $this->belongsTo('App\Models\Producto', 'producto_id');
     }
     public function sucursales(){
         return $this->belongsTo('App\Models\Sucursal', 'sucursal_id');

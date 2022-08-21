@@ -22,7 +22,7 @@
                     <ul class="navmain nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li><a href="/" class="nav-link">Inicio</a></li>
                         <li><a href="/productos" class="nav-link">Productos</a></li>
-                        <li><a href="/sucursales" class="nav-link">Sucursales</a></li>
+                        <li><a href="/productosconsucursales" class="nav-link">Sucursales</a></li>
                         <li><a href="/categorias" class="nav-link">Categorías</a></li>
                     </ul>
                     <div class="text-end">

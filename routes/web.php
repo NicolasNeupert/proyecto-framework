@@ -25,8 +25,8 @@ Route::get('/','App\Http\Controllers\InicioController@index');
 
 /*PRODUCTOS*/
 Route::resource('/productos', 'App\Http\Controllers\ProductoController');
-
 Route::get('/productos/{id}', 'App\Http\Controllers\ProductoController@show');
+Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
 
 /*SUCURSALES*/
 Route::resource('/sucursales', 'App\Http\Controllers\SucursalController');
@@ -48,3 +48,6 @@ Auth::routes();
 
 //recuperar imagen
 Route::get('miniatura/{filename}', 'App\Http\Controllers\ProductoController@getImagen');
+
+//BUSCAR
+Route::get('/buscar/{search?}', 'App\Http\Controllers\ProductoController@search')->name('buscar');

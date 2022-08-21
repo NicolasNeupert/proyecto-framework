@@ -25,6 +25,14 @@
                         <li><a href="/productosconsucursales" class="nav-link">Sucursales</a></li>
                         <li><a href="/categorias" class="nav-link">Categorías</a></li>
                     </ul>
+                    
+                    <div class="text-end">
+                        <form action="{{ url('buscar') }}" class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <input type="submit" hidden>
+                        </form>
+                    </div>
+
                     <div class="text-end">
                         <a href="/user/login" class="btn btn-outline-light me-2">Login</a>
                     </div>

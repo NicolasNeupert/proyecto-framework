@@ -47,7 +47,7 @@
                                     <a href="/productos/{{$producto[0]->id}}/edit" class="btn btn-primary">Editar</a>
                                 </div>
                                 <div class="col-6 text-start">
-                                    <a href="#" class="btn btn-danger">Eliminar</a>
+                                    <a href="/productos/{{$producto[0]->id}}/delete" class="btn btn-danger">Eliminar</a>
                                 </div>
                             </div>
                         </div>

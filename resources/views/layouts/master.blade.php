@@ -22,9 +22,17 @@
                     <ul class="navmain nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li><a href="/" class="nav-link">Inicio</a></li>
                         <li><a href="/productos" class="nav-link">Productos</a></li>
-                        <li><a href="/sucursales" class="nav-link">Sucursales</a></li>
+                        <li><a href="/productosconsucursales" class="nav-link">Sucursales</a></li>
                         <li><a href="/categorias" class="nav-link">Categorías</a></li>
                     </ul>
+                    
+                    <div class="text-end">
+                        <form action="{{ url('buscar') }}" class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <input type="submit" hidden>
+                        </form>
+                    </div>
+
                     <div class="text-end">
                         <a href="/user/login" class="btn btn-outline-light me-2">Login</a>
                     </div>

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="ingresarProductoNuevo">
-                    <form action="{{ url('/productos')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/productos') }}" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre del producto</label>
                             <input type="text" class="form-control" name="nombre" placeholder="Desktop Gamer Red Leeroy AMD Ryzen 3">
@@ -27,15 +27,6 @@
                                 <option value="null">Elije una categoría</option>
                                 @foreach($categorias as $categoria)
                                 <option value="{{$categoria['id']}}">{{$categoria['nombre']}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="sucursal" class="form-label">Sucursal</label>
-                            <select class="form-select form-select-md" name="sucursal">
-                                <option value="null">Elije una comuna</option>
-                                @foreach($sucursales as $sucursal)
-                                <option value="{{$sucursal['id']}}">{{$sucursal['comuna']}}</option>
                                 @endforeach
                             </select>
                         </div>

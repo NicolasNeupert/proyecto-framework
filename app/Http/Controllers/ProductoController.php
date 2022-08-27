@@ -8,16 +8,13 @@ use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\Sucursal;
 
-class ProductoController extends Controller
-{
-    public function index()
-    {
+class ProductoController extends Controller{
+    public function index(){
         $data = Producto::get() -> load('categorias');
         return view('producto.mostrar', ['productos' => $data]);
     }
 
-    public function create()
-    {
+    public function create(){
         $categoriasList = Categoria::all();
         $sucursalList = Sucursal::all();
         return view('producto.crear', [
@@ -32,7 +29,6 @@ class ProductoController extends Controller
             'nombre' => 'required',
             'codigo' => 'required',
             'categoria' => 'required',
-            'sucursal' => 'required',
             'estado' => 'required',
             'precio' => 'required',
             'descripcion' => 'required',
@@ -66,21 +62,70 @@ class ProductoController extends Controller
         ]);
     }
 
-    public function destroy(){
-        return view('producto.eliminar');
+    public function delete($id){
+        $producto = Producto::where('id', $id)->get();
+        if(\Storage::disk('images')->has($producto[0]->image)){
+            \Storage::disk('images')->delete($producto[0]->image);
+        }
+
+        $productoDestroy = Producto::find($id);
+        $productoDestroy->delete();
+
+        $data = Producto::get()->load('categorias');
+        return view('producto.mostrar', ['productos' => $data]);
     }
 
     public function edit($id){
-        $producto = Producto::where('id', $id)->get()->load('categorias')->load('sucursales');
+        $producto = Producto::where('id', $id)->get()->load('categorias');
         $categoriasList = Categoria::all();
-        $sucursalList = Sucursal::all();
         return view('producto.editar', [
             'producto' => $producto,
-            'categorias' => $categoriasList,
-            'sucursales' => $sucursalList
+            'categorias' => $categoriasList
         ]);
     }
 
+    public function update(Request $request){
+        $this->validate($request, [
+            'nombre' => 'required',
+            'categoria' => 'required',
+            'estado' => 'required',
+            'precio' => 'required',
+            'descripcion' => 'required'
+        ]);
+
+        $imagen = $request->file('imagen');
+
+        if($imagen){
+            $imagen_path = time()."-".$imagen->getClientOriginalName();
+            \Storage::disk('images')->put($imagen_path, \File::get($imagen));
+            Producto::where('id', $request->id)
+            ->update([
+                'nombre' => $request->nombre,
+                'codigo' => $request->codigo,
+                'categoria_id' => $request->input('categoria'),
+                'descripcion' => $request->descripcion,
+                'imagen' => $imagen_path,
+                'precio' => $request->precio,
+                'estado' => $request->estado
+            ]);
+        }else{
+            Producto::where('id', $request->id)
+            ->update([
+                'nombre' => $request->nombre,
+                'codigo' => $request->codigo,
+                'categoria_id' => $request->input('categoria'),
+                'descripcion' => $request->descripcion,
+                'precio' => $request->precio,
+                'estado' => $request->estado
+            ]);
+        }
+
+        $productos = Producto::get();
+        return view('producto.mostrar',[
+            'productos' => $productos
+        ]);
+    }
+    
     public function show($id){
         
         $producto = Producto::where('id', $id)->get()->load('categorias');
@@ -94,5 +139,20 @@ class ProductoController extends Controller
     public function getImagen($filename){
         $file = \Storage::disk('images')->get($filename);
         return new Response($file, 200);
+    }
+
+    public function search($search = null){
+        if($search = null){
+            $search = \Request::get('search');
+        }
+
+        $producto = Producto::where('nombre', 'LIKE', '%'.$search.'%')->get();
+        return view('producto.mostrar')
+        ->with(
+            array(
+                'productos' => $producto,
+                'search' => $search
+            )
+        );
     }
 }

@@ -10,7 +10,15 @@ use App\Models\Producto_Sucursal;
 
 class ProductosconsucursalesController extends Controller
 {
-    //
+    public function index()
+    {
+        $data = Producto_Sucursal::get()->load('sucursales')->load('productos');
+        $sucursalList = Sucursal::all();
+        return view('productos_sucursales.mostrar', [
+            'productos_sucursales' => $data,
+            'sucursales' => $sucursalList
+        ]);
+    }
     public function create()
     {
         $productosList = Producto::all();

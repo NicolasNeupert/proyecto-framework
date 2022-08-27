@@ -26,9 +26,13 @@ Route::get('/','App\Http\Controllers\InicioController@index');
 /*PRODUCTOS*/
 Route::resource('/productos', 'App\Http\Controllers\ProductoController');
 Route::get('/productos/{id}', 'App\Http\Controllers\ProductoController@show');
+<<<<<<< HEAD
 Route::get('/productos/{id}/delete', 'App\Http\Controllers\ProductoController@delete');
 Route::get('/productos/{id}/edit','App\Http\Controllers\ProductoController@edit');
 Route::post('/productos/update','App\Http\Controllers\ProductoController@update');
+=======
+Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
+>>>>>>> bcc7683b0e27f69dd7b830ebac8adce24c915e3a
 
 /*SUCURSALES*/
 Route::resource('/sucursales', 'App\Http\Controllers\SucursalController');

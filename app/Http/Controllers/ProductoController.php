@@ -75,7 +75,20 @@ class ProductoController extends Controller{
         return view('producto.mostrar', ['productos' => $data]);
     }
 
+<<<<<<< HEAD
     public function edit($id){
+=======
+    // public function edit($id){
+    //     $producto = Producto::where('id', $id)->get()->load('categorias');
+    //     $categoriasList = Categoria::all();
+    //     return view('producto.editar', [
+    //         'producto' => $producto,
+    //         'categorias' => $categoriasList,
+    //     ]);
+    // }
+    public function edit($id)
+    {
+>>>>>>> bcc7683b0e27f69dd7b830ebac8adce24c915e3a
         $producto = Producto::where('id', $id)->get()->load('categorias');
         $categoriasList = Categoria::all();
         return view('producto.editar', [
@@ -84,6 +97,7 @@ class ProductoController extends Controller{
         ]);
     }
 
+<<<<<<< HEAD
     public function update(Request $request){
         $this->validate($request, [
             'nombre' => 'required',
@@ -124,6 +138,22 @@ class ProductoController extends Controller{
         return view('producto.mostrar',[
             'productos' => $productos
         ]);
+=======
+    public function update(Request $request, $id)
+    {
+        $producto = Producto::find($id);
+
+        $producto->nombre = $request->input('nombre');
+        $producto->codigo = $request->input('codigo');
+        $producto->estado = $request->input('estado');
+        $producto->precio = $request->input('precio');
+        $producto->descripcion = $request->input('descripcion');
+        $producto->imagen = $imagen_path;
+
+        $producto->update();
+        
+        return redirect()->back()->with('status','Product Updated Successfully');
+>>>>>>> bcc7683b0e27f69dd7b830ebac8adce24c915e3a
     }
     
     public function show($id){

@@ -13,20 +13,20 @@ class ProductosconsucursalesController extends Controller
     public function index()
     {
         $data = Producto_Sucursal::get()->load('sucursales')->load('productos');
-        $sucursalList = Sucursal::all();
+        $sucursal = Sucursal::all();
+        $producto = Producto::all();
         return view('productos_sucursales.mostrar', [
             'productos_sucursales' => $data,
-            'sucursales' => $sucursalList
+            'sucursales' => $sucursal,
+            'productos' => $producto
         ]);
     }
     public function create()
-    {
-        $productosList = Producto::all();
-        $categoriasList = Categoria::all();
+    {   
+        $producto = Producto::all();
         $sucursalList = Sucursal::all();
         return view('productos_sucursales.crear', [
-            'productos' => $productosList,
-            'categorias' => $categoriasList,
+            'productos' => $producto,
             'sucursales' => $sucursalList
         ]);
     }
@@ -48,9 +48,57 @@ class ProductosconsucursalesController extends Controller
         $producto_sucursal->save();
 
         $producto = Producto::all();
-        return view('producto.mostrar', [
+        $sucursal = Sucursal::all();
+        $producto_sucursal = Producto_Sucursal::all();
+        return view('productos_sucursales.mostrar', [
+            'productos' => $producto,
+            'sucursales' => $sucursal,
+            'productos_sucursales' => $producto_sucursal
+        ]);
+    }
+
+    public function edit($id){
+
+        $producto=Producto::where('id', $id)->get();
+        $producto_sucursal_List = Producto_Sucursal::all();  
+
+        return view('productos_sucursales.crear', [
+            'productos_sucursales' => $producto_sucursal_List,
             'productos' => $producto
         ]);
+    }
 
+
+
+    public function update(Request $request){
+        $this->validate($request, [
+            'cantidad' => 'required',
+            'producto' => 'required',
+            'sucursal' => 'required'
+        ]);
+
+        
+        Producto::findOrFail('id', $request->id)
+        ->update([
+            'cantidad' => $request->cantidad,
+            'sucursal' => $request->sucursal,
+            'producto' => $request->input('producto')
+        ]);
+        
+
+        $producto_sucursal = Producto_Sucursal::get();
+
+        return view('productos_sucursales.mostrar', [
+            'productos_sucursales' => $producto_sucursal
+        ]);
+    }
+
+    public function destroy($id){
+        Producto_Sucursal::destroy($id);
+        $producto_sucursal = Producto_Sucursal::get();
+        return view('productos_sucursales.mostrar', [
+            'productos_sucursales' => $producto_sucursal
+        ]);
     }
 }
+

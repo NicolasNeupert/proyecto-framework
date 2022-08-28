@@ -25,8 +25,15 @@ class CreateProductosSucursalesTable extends Migration
         Schema::table('productos_sucursales', function(Blueprint $table) 
         {
             $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
-            $table->foreign('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
         });
+
+        Schema::table('productos_sucursales', function(Blueprint $table) 
+        {
+            $table->foreign('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
+        
+        });
+
+
         
     }
     /**

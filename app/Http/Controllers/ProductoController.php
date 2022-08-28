@@ -7,11 +7,14 @@ use Illuminate\Http\Response;
 use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\Sucursal;
+use App\Models\Producto_Sucursal;
 
 class ProductoController extends Controller{
     public function index(){
         $data = Producto::get() -> load('categorias');
-        return view('producto.mostrar', ['productos' => $data]);
+        return view('producto.mostrar', [
+            'productos' => $data
+        ]);
     }
 
     public function create(){
@@ -56,23 +59,40 @@ class ProductoController extends Controller{
 
         $producto = Producto::get();
         $sucursal = Sucursal::get();
-        return view('productos_sucursales.crear', [
+        return view('producto.mostrar', [
             'productos' => $producto,
-            'sucursales' => $sucursal,
+            'sucursales' => $sucursal
         ]);
     }
 
     public function delete($id){
         $producto = Producto::where('id', $id)->get();
+
+        $idCargada = $producto[0]->id;
+
+        //dd($idCargada);
+
         if(\Storage::disk('images')->has($producto[0]->image)){
             \Storage::disk('images')->delete($producto[0]->image);
         }
 
-        $productoDestroy = Producto::find($id);
-        $productoDestroy->delete();
+        
+        $producto_sucursal = Producto_Sucursal::where('id', $id)->get();
+        $producto = Producto::where('id', $id)->get();
 
-        $data = Producto::get()->load('categorias');
-        return view('producto.mostrar', ['productos' => $data]);
+
+        $stockDelete = Producto_Sucursal::find($idCargada);
+        $productoDestroy = Producto::find($id);
+
+        $productoDestroy->delete();
+        $stockDelete->delete();
+        
+        
+        $data = Producto::get() -> load('categorias');
+        return view('producto.mostrar', [
+            'productos' => $data
+            
+        ]);
     }
 
     public function edit($id){
@@ -120,9 +140,11 @@ class ProductoController extends Controller{
             ]);
         }
 
-        $productos = Producto::get();
-        return view('producto.mostrar',[
-            'productos' => $productos
+        $producto = Producto::get();
+        $sucursal = Sucursal::get();
+        return view('producto.mostrar', [
+            'productos' => $producto,
+            'sucursales' => $sucursal,
         ]);
     }
     

@@ -38,6 +38,9 @@ Route::resource('/categorias', 'App\Http\Controllers\CategoriaController');
 
 /*PRODUCTOS SUCURSALES*/
 Route::resource('/productosconsucursales', 'App\Http\Controllers\ProductosconsucursalesController');
+Route::get('/productosconsucursales/create','App\Http\Controllers\ProductosconsucursalesController@create')->name('asignarProducto');
+Route::get('/productosconsucursales/{id}/edit','App\Http\Controllers\ProductosconsucursalesController@edit');
+Route::get('/productosconsucursales/update','App\Http\Controllers\ProductosconsucursalesController@update');
 
 /*USUARIOS*/
 Route::resource('/users','App\Http\Controllers\UserController');

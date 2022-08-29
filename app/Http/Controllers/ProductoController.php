@@ -89,8 +89,10 @@ class ProductoController extends Controller{
         
         
         $data = Producto::get() -> load('categorias');
+        $producto_sucursal = Producto_Sucursal::get();
         return view('producto.mostrar', [
-            'productos' => $data
+            'productos' => $data,
+            'productos_sucursales' => $producto_sucursal
             
         ]);
     }

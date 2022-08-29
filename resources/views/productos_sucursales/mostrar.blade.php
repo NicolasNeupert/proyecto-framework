@@ -17,6 +17,7 @@
                 </div>
             </div>
             <div class="row">
+                <br>
                 <div class="row">
                     <div class="col-sm-4">
                     </div>
@@ -26,6 +27,8 @@
                         <a name="asignar" class="btn btn-outline-primary" href="/productosconsucursales/create" >Asignar Stock a Sucursal</a>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="col-sm-2">
                     <div class="sidebar">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

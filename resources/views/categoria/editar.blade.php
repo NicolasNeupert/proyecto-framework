@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Editar Sucursal')
+@section('title', 'Editar Categoria')
 
 
 
@@ -12,13 +12,20 @@
         <div class="row">
             <div class="col-md-4">
             </div>
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
                         Formulario para actualizar información de categoría:
+                            <form action="{{ url('/categorias/update') }}" method="POST">
+              
                     </div>
+                    @foreach($categorias as $categoria)
+
+                  
                 </div>
             </div>
+         
             <div class="col-md-4">
             </div>
         </div>
@@ -30,17 +37,16 @@
             </div>
             <div class="col-md-8">
                 <div class="container">
+                
                     <br>
                     <div class="col-sm-8 offset-sm-2">
-                        <form action="" method="">
-
-                            <div class="mb-3">
-                                <label for="nameProduct" class="form-label">ID Categoría</label>
-                                <input type="text" class="form-control" id="nameProduct">
-                            </div>
-                            <div class="mb-3">
-                                <label for="categoryProduct" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="categoryProduct">
+                        <input type="hidden" class="form-control" id="id" name="id" value="{{ $categorias[0]->id }}">
+                     <div class="mb-3">
+                   
+                    
+                                <label for="categoryProduct" class="form-label">Actual nombre de categoria : {{$categorias[0]->nombre}} </label>
+                               
+                                <input type="text" class="form-control" name="nombre" placeholder="ingresar nuevo nombre de categoria">
                             </div>
                             <div class="mb-3">
                                 <label for="descriptionProduct" class="form-label">Descripción </label>
@@ -51,6 +57,7 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                     </div>
+                                    @endforeach
                                     <div class="col-md-3">
                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                     </div>

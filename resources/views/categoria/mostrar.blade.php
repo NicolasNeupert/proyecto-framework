@@ -21,16 +21,26 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nombre</th>
-                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Descripción</th>                                        
                                     </tr>
                                 </thead>
+                           
                                 <tbody>
+                               
                                     @foreach($categorias as $categoria)
+                               
                                     <tr>
                                         <th scope="row">{{$categoria['id']}}</th>
                                         <td>{{$categoria['nombre']}}</td>
                                         <td>{{$categoria['descripcion']}}</td>
+                                        <td> <div class="d-flex actions-buttons">
+                                    <div class="btn-group">
+                                        <a href="/categorias/{{$categoria['id']}}" class="btn btn-success">Ver más</a>
+                                    </div>
+                                </div> 
+                            </td>
                                     </tr>
+                                   
                                     @endforeach
                                 </tbody>
                             </table>
@@ -46,6 +56,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+           
             </div>
         </div>
     </div>

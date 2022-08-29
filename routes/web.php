@@ -35,6 +35,9 @@ Route::resource('/sucursales', 'App\Http\Controllers\SucursalController');
 
 /*CATEGORIAS*/
 Route::resource('/categorias', 'App\Http\Controllers\CategoriaController');
+Route::get('/categorias/{id}', 'App\Http\Controllers\CategoriaController@show');
+Route::get('/categorias/{id}/edit','App\Http\Controllers\CategoriaController@edit');
+Route::post('/categorias/update','App\Http\Controllers\CategoriaController@update');
 
 /*PRODUCTOS SUCURSALES*/
 Route::resource('/productosconsucursales', 'App\Http\Controllers\ProductosconsucursalesController');

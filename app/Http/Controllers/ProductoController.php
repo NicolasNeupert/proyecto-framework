@@ -67,31 +67,25 @@ class ProductoController extends Controller{
 
     public function delete($id){
         $producto = Producto::where('id', $id)->get();
-
         $idCargada = $producto[0]->id;
 
+        
         //dd($idCargada);
 
-        if(\Storage::disk('images')->has($producto[0]->image)){
-            \Storage::disk('images')->delete($producto[0]->image);
-        }
+        /*if(\Storage::disk('images')->has($producto[0]->imagen)){
+            \Storage::disk('images')->delete($producto[0]->imagen);
+        }*/
+
+        $stockDelete = Producto_Sucursal::find($idCargada)->delete();
+
+        $productoDestroy = Producto::find($id)->delete();
 
         
-        $producto_sucursal = Producto_Sucursal::where('id', $id)->get();
+        $producto_sucursal = Producto_Sucursal::where('id', $idCargada)->get();
         $producto = Producto::where('id', $id)->get();
 
-
-        $stockDelete = Producto_Sucursal::find($idCargada);
-        $productoDestroy = Producto::find($id);
-
-        $productoDestroy->delete();
-        $stockDelete->delete();
-        
-        
-        $data = Producto::get() -> load('categorias');
-        $producto_sucursal = Producto_Sucursal::get();
         return view('producto.mostrar', [
-            'productos' => $data,
+            'productos' => $producto,
             'productos_sucursales' => $producto_sucursal
             
         ]);
